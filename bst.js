@@ -70,9 +70,9 @@ class BinarySearchTree {
     }
   }
   remove(key) {
-    if (this.key == key) {
+    if (this.key == key) { // when found key do this
       if (this.left && this.right) {
-        const successor = this.right._findMin();
+        const successor = this.right._findMin();// if has 2 children replace with min on the right side
         this.key = successor.key;
         this.value = successor.value;
         successor.remove(successor.key);
@@ -94,7 +94,7 @@ class BinarySearchTree {
         this._replaceWith(null);
       }
     }
-    else if (key < this.key && this.left) {
+    else if (key < this.key && this.left) { // recurse to the left or right depending on the value.
       this.left.remove(key);
     }
     else if (key > this.key && this.right) {
@@ -134,7 +134,7 @@ class BinarySearchTree {
   }
 
   _findMin() {
-    if (!this.left) {
+    if (!this.left) { // go all the way left til it hits null
       return this;
     }
     return this.left._findMin();
