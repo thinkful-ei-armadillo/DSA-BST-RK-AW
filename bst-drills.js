@@ -7,10 +7,9 @@ function main(){
   const alpha = ['E', 'A', 'S', 'Y', 'Q', 'U', 'E', 'S', 'T', 'I', 'O', 'N'];
   nums.forEach(el => bstnum.insert(el, el));
   alpha.forEach(el => bstalpha.insert(el, el));
-  //   bst.remove(6)
+
   console.log('height', height(bstnum));
 
-  /* TEST findBinary */
   // bstnum.left = new BinarySearchTree(5,5,bstnum);
   // console.log(bstnum);
   console.log('is binary tree?', findBinary(bstnum));
