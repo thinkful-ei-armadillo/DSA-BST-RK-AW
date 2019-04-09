@@ -104,9 +104,11 @@ class BinarySearchTree {
       throw new Error('Key Error');
     }
   }
-  _replaceWith(node) {
-    if (this.parent) {
-      if (this == this.parent.left) {
+  _replaceWith(node) { //this.left
+    console.log('node',node);
+    console.log('parent',this.parent)
+    if (this.parent) {// if tree is not empty
+      if (this == this.parent.left) {// saying replace with is currently the parents left  
         this.parent.left = node;
       }
       else if (this == this.parent.right) {
@@ -140,3 +142,5 @@ class BinarySearchTree {
     return this.left._findMin();
   }
 }
+
+module.exports = BinarySearchTree;
